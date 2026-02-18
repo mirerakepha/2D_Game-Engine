@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="GameEngine2D" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/GameEngine2D" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../GameEngine2D" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add option="-mwindows" />
+					<Add library="mingw32" />
+					<Add library="SDL2main" />
+					<Add library="SDL2" />
+					<Add library="freetype" />
+					<Add library="opengl32" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/GameEngine2D" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="C:/Users/User/Desktop/BOOKS/GameEngine2D/" />
+			<Add directory="../../../../../Libraries/SDL2/include" />
+			<Add directory="../../../../../Libraries/freetype/include/freetype" />
+			<Add directory="include" />
+			<Add directory="../../../../../Libraries/freetype/include" />
+		</Compiler>
+		<Linker>
+			<Add option="-mwindows" />
+			<Add library="mingw32" />
+			<Add library="SDL2main" />
+			<Add library="SDL2" />
+			<Add library="freetype" />
+			<Add library="opengl32" />
+			<Add directory="../../../../../Libraries/SDL2/lib" />
+			<Add directory="../../../../../Libraries/freetype/lib" />
+		</Linker>
+		<Unit filename="include/glad/glad.h" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/glad.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
