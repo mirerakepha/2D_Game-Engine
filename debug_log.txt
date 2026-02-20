@@ -1,0 +1,36 @@
+=== Program Started ===
+About to call time_init
+time_init complete
+About to call config_init
+config_init complete
+About to call render_init
+render_init complete
+Entering main loop
+Exiting normally
+=== Program Started ===
+About to call time_init
+time_init complete
+About to call config_init
+config_init complete
+About to call render_init
+render_init complete
+Entering main loop
+Exiting normally
+=== Program Started ===
+About to call time_init
+time_init complete
+About to call config_init
+config_init complete
+About to call render_init
+render_init complete
+Entering main loop
+Exiting normally
+=== Program Started ===
+About to call time_init
+time_init complete
+About to call config_init
+config_init complete
+About to call render_init
+render_init complete
+Entering main loop
+Exiting normally

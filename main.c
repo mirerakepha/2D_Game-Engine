@@ -6,61 +6,90 @@
 #include <SDL2/SDL.h>
 #include <ft2build.h>
 #include FT_FREETYPE_H
+#include "src/engine/global.h"
+#include "src/engine/render/render.h"
+#include "src/engine/input.h"
+#include "src/engine/config.h"
+#include "src/engine/time.h"
+
+static bool should_quit = false;
+static vec2 pos;
+
+// Add logging function
+void log_to_file(const char* msg) {
+    FILE* f = fopen("debug_log.txt", "a");
+    if (f) {
+        fprintf(f, "%s\n", msg);
+        fclose(f);
+    }
+}
+
+static void input_handle(void)
+{
+    if(global.input.left == KS_PRESSED || global.input.left == KS_HELD)
+        pos[0] -= 500 * global.time.delta;
+    if(global.input.right == KS_PRESSED || global.input.right == KS_HELD)
+        pos[0] += 500 * global.time.delta;
+    if(global.input.up == KS_PRESSED || global.input.up == KS_HELD)
+        pos[1] += 500 * global.time.delta;
+    if(global.input.down == KS_PRESSED || global.input.down == KS_HELD)
+        pos[1] -= 500 * global.time.delta;
+    if(global.input.escape == KS_PRESSED || global.input.escape == KS_HELD)
+        should_quit = true;
+}
 
 int main(int argc, char* argv[]) {
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
+    log_to_file("=== Program Started ===");
 
-    if(SDL_Init(SDL_INIT_VIDEO)<0){
-        printf("Could not initialize SDL %s\n", SDL_GetError());
-        exit(1);
-    }
+    printf("Starting render_init...\n");
+    fflush(stdout);
 
-    SDL_Window *window = SDL_CreateWindow(
-        "MyGame",
-        SDL_WINDOWPOS_CENTERED,
-        SDL_WINDOWPOS_CENTERED,
-        800,
-        600,
-        SDL_WINDOW_OPENGL
-    );
+    log_to_file("About to call time_init");
+    time_init(60);
+    log_to_file("time_init complete");
 
-    if(!window){
-        printf("failed to create window %s\n", SDL_GetError());
-        exit(1);
-    }
+    log_to_file("About to call config_init");
+    config_init();
+    log_to_file("config_init complete");
 
-    SDL_GL_CreateContext(window);
-    if(!gladLoadGLLoader((GLADloadproc)SDL_GL_GetProcAddress)){
-            printf("Failed to load GL %s\n", SDL_GetError());
-            exit(1);
-    }
+    log_to_file("About to call render_init");
+    render_init();
+    log_to_file("render_init complete");
 
-    puts("GL loaded");
-    printf("vendor %s/n", glGetString(GL_VENDOR));
-    printf("renderer %s/n", glGetString(GL_RENDERER));
-    printf("version %s/n", glGetString(GL_VERSION));
+    printf("render_init complete!\n");
+    printf("Window created successfully\n");
+    fflush(stdout);
 
-    //Window should n't quit instantly even without a loop
-    bool should_quit = false;
+    pos[0] = global.render.width * 0.5;
+    pos[1] = global.render.height * 0.5;
+
+    log_to_file("Entering main loop");
 
     while (!should_quit){
-            SDL_Event event;
+        time_update();
 
-            while(SDL_PollEvent(&event)){
-                switch(event.type){
-                case SDL_QUIT:
-                    should_quit = true;
-                    break;
-                default:
-                    break;
-
-                }
+        SDL_Event event;
+        while(SDL_PollEvent(&event)){
+            switch(event.type){
+            case SDL_QUIT:
+                should_quit = true;
+                break;
+            default:
+                break;
             }
+        }
 
+        input_update();
+        input_handle();
+
+        render_begin();
+        render_quad(pos, (vec2){50, 50}, (vec4){0, 1, 0, 1});
+        render_end();
+
+        time_update_late();
     }
 
-
+    log_to_file("Exiting normally");
+    printf("Exiting normally\n");
     return 0;
 }

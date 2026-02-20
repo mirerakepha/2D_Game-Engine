@@ -471,11 +471,147 @@
 
 1675974285 c:\libraries\freetype\include\freetype\config\ftheader.h
 
-1771401723 source:c:\users\user\desktop\books\gameengine2d\main.c
+1771580834 source:c:\users\user\desktop\books\gameengine2d\main.c
 	<stdio.h>
+	<stdbool.h>
 	<stdlib.h>
-	<stdio.h>
 	<glad/glad.h>
 	<SDL2/SDL.h>
 	<ft2build.h>
+	"src/engine/global.h"
+	"src/engine/render/render.h"
+	"src/engine/input.h"
+	"src/engine/config.h"
+	"src/engine/time.h"
+
+1771438964 source:c:\users\user\desktop\books\gameengine2d\src\engine\global.c
+	"global.h"
+
+1771476596 source:c:\users\user\desktop\books\gameengine2d\src\engine\render\render.c
+	<glad/glad.h>
+	"../global.h"
+	"render.h"
+	"render_internal.h"
+
+1771477198 source:c:\users\user\desktop\books\gameengine2d\src\engine\render\render_init.c
+	<glad/glad.h>
+	<SDL2/SDL.h>
+	"src/engine/util.h"
+	"src/engine/global.h"
+	"src/engine/render/render.h"
+	"src/engine/render/render_internal.h"
+
+1771569586 c:\users\user\desktop\books\gameengine2d\src\engine\global.h
+	<stdio.h>
+	"render/render.h"
+	"config.h"
+	"input.h"
+	"time.h"
+
+1771438885 c:\users\user\desktop\books\gameengine2d\src\engine\render\render.h
+	<SDL2/SDL.H>
+	<linmath.h>
+	"../types.h"
+
+1771425828 c:\users\user\desktop\books\gameengine2d\include\linmath.h
+	<string.h>
+	<math.h>
+	<string.h>
+
+1771424440 c:\users\user\desktop\books\gameengine2d\src\engine\types.h
+	<inttypes.h>
+
+1771439014 c:\users\user\desktop\books\gameengine2d\\src\engine\utils.h
+	<stdio.h>
+
+1771569586 c:\users\user\desktop\books\gameengine2d\\src\engine\global.h
+	<stdio.h>
+	"render/render.h"
+	"config.h"
+	"input.h"
+	"time.h"
+
+1771438885 c:\users\user\desktop\books\gameengine2d\\src\engine\render\render.h
+	<SDL2/SDL.H>
+	<linmath.h>
+	"../types.h"
+
+1771424440 c:\users\user\desktop\books\gameengine2d\\src\engine\types.h
+	<inttypes.h>
+
+1771474639 c:\users\user\desktop\books\gameengine2d\src\engine\render\render_internal.h
+	<SDL2/SDL.h>
+	"../types.h"
+	"render.h"
+
+1771474639 c:\users\user\desktop\books\gameengine2d\\src\engine\render\render_internal.h
+	<SDL2/SDL.h>
+	"../types.h"
+	"render.h"
+
+1771580196 source:c:\users\user\desktop\books\gameengine2d\src\engine\io\io.c
+	<stdio.h>
+	<stdlib.h>
+	<errno.h>
+	"../types.h"
+	"../util.h"
+	"io.h"
+
+1771568803 c:\users\user\desktop\books\gameengine2d\src\engine\util.h
+	<stdio.h>
+
+1771474648 c:\users\user\desktop\books\gameengine2d\src\engine\io\io.h
+	<stdlib.h>
+	<stdbool.h>
+
+1771476596 source:c:\users\user\desktop\books\gameengine2d\src\engine\render\render_util.c
+	<glad/glad.h>
+	<stdio.h>
+	"../util.h"
+	"../io/io.h"
+	"render_internal.h"
+
+1771568803 c:\users\user\desktop\books\gameengine2d\\src\engine\util.h
+	<stdio.h>
+
+1771564476 c:\users\user\desktop\books\gameengine2d\\src\engine\config.h
+	"input.h"
+	"types.h"
+
+1771563817 c:\users\user\desktop\books\gameengine2d\\src\engine\input.h
+
+1771569908 c:\users\user\desktop\books\gameengine2d\\src\engine\time.h
+	"types.h"
+
+1771569499 source:c:\users\user\desktop\books\gameengine2d\src\engine\time\time.c
+	<SDL2/SDL.h>
+	"src/engine/time.h"
+	"src/engine/global.h"
+
+1771569908 c:\users\user\desktop\books\gameengine2d\src\engine\time.h
+	"types.h"
+
+1771581006 source:c:\users\user\desktop\books\gameengine2d\src\engine\config\config.c
+	<string.h>
+	<SDL2/SDL.h>
+	"src/engine/global.h"
+	"src/engine/io/io.h"
+	"src/engine/util.h"
+	"src/engine/config.h"
+	"src/engine/input.h"
+
+1771474648 c:\users\user\desktop\books\gameengine2d\\src\engine\io\io.h
+	<stdlib.h>
+	<stdbool.h>
+
+1771564476 c:\users\user\desktop\books\gameengine2d\src\engine\config.h
+	"input.h"
+	"types.h"
+
+1771563817 c:\users\user\desktop\books\gameengine2d\src\engine\input.h
+
+1771581711 source:c:\users\user\desktop\books\gameengine2d\src\engine\input\input.c
+	"../input.h"
+	"../global.h"
+	"../types.h"
 
