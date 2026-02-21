@@ -5,7 +5,57 @@ About to call config_init
 config_init complete
 About to call render_init
 render_init complete
+About to call physics_init
+physics_init complete
+=== Program Started ===
+About to call time_init
+time_init complete
+About to call config_init
+config_init complete
+About to call render_init
+render_init complete
+About to call physics_init
+physics_init complete
+=== Program Started ===
+About to call time_init
+time_init complete
+About to call config_init
+config_init complete
+About to call render_init
+render_init complete
+About to call physics_init
+physics_init complete
+=== Program Started ===
+About to call time_init
+time_init complete
+About to call config_init
+config_init complete
+About to call render_init
+render_init complete
+About to call physics_init
+physics_init complete
+=== Program Started ===
+About to call time_init
+time_init complete
+About to call config_init
+config_init complete
+About to call render_init
+render_init complete
+About to call physics_init
+physics_init complete
+=== Program Started ===
+About to call time_init
+time_init complete
+About to call config_init
+config_init complete
+About to call render_init
+render_init complete
+About to call physics_init
+physics_init complete
 Entering main loop
+Quit: SDL_QUIT event received
+Loop exiting: should_quit is true
+Escape key state: 0
 Exiting normally
 === Program Started ===
 About to call time_init
@@ -14,23 +64,10 @@ About to call config_init
 config_init complete
 About to call render_init
 render_init complete
+About to call physics_init
+physics_init complete
 Entering main loop
-Exiting normally
-=== Program Started ===
-About to call time_init
-time_init complete
-About to call config_init
-config_init complete
-About to call render_init
-render_init complete
-Entering main loop
-Exiting normally
-=== Program Started ===
-About to call time_init
-time_init complete
-About to call config_init
-config_init complete
-About to call render_init
-render_init complete
-Entering main loop
+Quit: SDL_QUIT event received
+Loop exiting: should_quit is true
+Escape key state: 0
 Exiting normally

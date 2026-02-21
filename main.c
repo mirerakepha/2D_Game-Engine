@@ -11,6 +11,8 @@
 #include "src/engine/input.h"
 #include "src/engine/config.h"
 #include "src/engine/time.h"
+#include "src/engine/physics.h"
+#include "src/engine/util.h"
 
 static bool should_quit = false;
 static vec2 pos;
@@ -27,15 +29,15 @@ void log_to_file(const char* msg) {
 static void input_handle(void)
 {
     if(global.input.left == KS_PRESSED || global.input.left == KS_HELD)
-        pos[0] -= 500 * global.time.delta;
-    if(global.input.right == KS_PRESSED || global.input.right == KS_HELD)
-        pos[0] += 500 * global.time.delta;
-    if(global.input.up == KS_PRESSED || global.input.up == KS_HELD)
-        pos[1] += 500 * global.time.delta;
-    if(global.input.down == KS_PRESSED || global.input.down == KS_HELD)
-        pos[1] -= 500 * global.time.delta;
-    if(global.input.escape == KS_PRESSED || global.input.escape == KS_HELD)
-        should_quit = true;
+       should_quit = true;
+
+    i32 x, y;
+    SDL_GetMouseState(&x, &y);
+
+    pos[0] = (f32)x;
+    pos[1] = global.render.height - y;
+
+
 }
 
 int main(int argc, char* argv[]) {
@@ -56,12 +58,41 @@ int main(int argc, char* argv[]) {
     render_init();
     log_to_file("render_init complete");
 
-    printf("render_init complete!\n");
-    printf("Window created successfully\n");
-    fflush(stdout);
+    log_to_file("About to call physics_init");
+    physics_init();
+    log_to_file("physics_init complete");
+
+/* ====================================
+       POLYGONS FOR PHYSICS SIMULATION
+   ====================================
+    u32 body_count = 100;
+    for (u32 i = 0; i < body_count; ++i)
+    {
+        usize body_index = physics_body_create(
+            (vec2){
+                rand() % (i32)global.render.width,
+                rand() % (i32)global.render.height
+            },
+            (vec2){
+                rand() % 100,
+                rand() % 100
+            }
+        );
+        Body *body = physics_body_get(body_index);
+        body->acceleration[0] = rand() % 200 - 100;
+        body->acceleration[1] = rand() % 200 - 100;
+    }
+*/
 
     pos[0] = global.render.width * 0.5;
     pos[1] = global.render.height * 0.5;
+
+    SDL_ShowCursor(false);
+
+    AABB test_aabb = {
+        .position = {global.render.width * 0.5, global.render.height * 0.5},
+        .half_size = {50, 50}
+    };
 
     log_to_file("Entering main loop");
 
@@ -73,6 +104,7 @@ int main(int argc, char* argv[]) {
             switch(event.type){
             case SDL_QUIT:
                 should_quit = true;
+                log_to_file("Quit: SDL_QUIT event received");
                 break;
             default:
                 break;
@@ -82,8 +114,53 @@ int main(int argc, char* argv[]) {
         input_update();
         input_handle();
 
+        // Check why we're quitting
+        if (should_quit) {
+            log_to_file("Loop exiting: should_quit is true");
+            char buf[100];
+            sprintf(buf, "Escape key state: %d", global.input.escape);
+            log_to_file(buf);
+        }
+
+        physics_update();
+
         render_begin();
-        render_quad(pos, (vec2){50, 50}, (vec4){0, 1, 0, 1});
+
+        render_aabb((f32*)&test_aabb, (vec4){1, 1, 1, 0.5});
+
+        if (physics_point_intersect_aabb(pos, test_aabb))
+            render_quad(pos, (vec2){5, 5}, MAGENTA);
+        else
+            render_quad(pos, (vec2){5, 5}, WHITE);
+
+
+
+        //render_quad(pos, (vec2){50, 50}, (vec4){0, 1, 0, 1});
+
+/* ====================================
+       POLYGONS FOR PHYSICS SIMULATION
+   ====================================
+        for (u32 i = 0; i < body_count; ++i)
+        {
+            Body *body = physics_body_get(i);
+            render_quad(body->aabb.position, body->aabb.half_size, (vec4){1, 0, 0, 1});
+
+            if (body->aabb.position[0] > global.render.width || body->aabb.position[0] < 0)
+                body->velocity[0] *= -1;
+            if (body->aabb.position[1] > global.render.height || body->aabb.position[1] < 0)
+                body->velocity[1] *= -1;
+
+            if (body->velocity[0] > 500)
+                body->velocity[0] = 500;
+            if (body->velocity[0] < -500)
+                body->velocity[0] = -500;
+
+            if (body->velocity[1] > 500)
+                body->velocity[1] = 500;
+            if (body->velocity[1] < -500)
+                body->velocity[1] = -500;
+        }
+*/
         render_end();
 
         time_update_late();

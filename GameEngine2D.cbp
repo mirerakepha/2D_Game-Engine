@@ -15,7 +15,6 @@
 					<Add option="-g" />
 				</Compiler>
 				<Linker>
-					<Add option="-mwindows" />
 					<Add library="mingw32" />
 					<Add library="SDL2main" />
 					<Add library="SDL2" />
@@ -45,7 +44,6 @@
 			<Add directory="../../../../../Libraries/freetype/include" />
 		</Compiler>
 		<Linker>
-			<Add option="-mwindows" />
 			<Add library="mingw32" />
 			<Add library="SDL2main" />
 			<Add library="SDL2" />
@@ -54,16 +52,26 @@
 			<Add directory="../../../../../Libraries/SDL2/lib" />
 			<Add directory="../../../../../Libraries/freetype/lib" />
 		</Linker>
+		<Unit filename="bin/Debug/config.ini" />
+		<Unit filename="config.ini" />
 		<Unit filename="include/glad/glad.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="shaders/default.frag" />
 		<Unit filename="shaders/default.vert" />
+		<Unit filename="src/engine/config.h" />
+		<Unit filename="src/engine/config/config.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/engine/global.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/engine/global.h" />
+		<Unit filename="src/engine/input.h" />
+		<Unit filename="src/engine/input/input.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/engine/io/io.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -77,6 +85,10 @@
 		</Unit>
 		<Unit filename="src/engine/render/render_internal.h" />
 		<Unit filename="src/engine/render/render_util.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/engine/time.h" />
+		<Unit filename="src/engine/time/time.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/engine/types.h" />
