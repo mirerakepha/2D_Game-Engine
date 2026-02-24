@@ -60,8 +60,16 @@
 		</Unit>
 		<Unit filename="shaders/default.frag" />
 		<Unit filename="shaders/default.vert" />
+		<Unit filename="src/engine/array_list.h" />
+		<Unit filename="src/engine/array_list/array_list.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/engine/config.h" />
 		<Unit filename="src/engine/config/config.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/engine/entity.h" />
+		<Unit filename="src/engine/entity/entity.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/engine/global.c">
@@ -76,6 +84,11 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/engine/io/io.h" />
+		<Unit filename="src/engine/physics.h" />
+		<Unit filename="src/engine/physics/physics.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/engine/physics/physics_internal.h" />
 		<Unit filename="src/engine/render/render.c">
 			<Option compilerVar="CC" />
 		</Unit>

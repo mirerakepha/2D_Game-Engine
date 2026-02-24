@@ -471,7 +471,7 @@
 
 1675974285 c:\libraries\freetype\include\freetype\config\ftheader.h
 
-1771656097 source:c:\users\user\desktop\books\gameengine2d\main.c
+1771904269 source:c:\users\user\desktop\books\gameengine2d\main.c
 	<stdio.h>
 	<stdbool.h>
 	<stdlib.h>
@@ -485,17 +485,18 @@
 	"src/engine/time.h"
 	"src/engine/physics.h"
 	"src/engine/util.h"
+	"src/engine/entity.h"
 
 1771438964 source:c:\users\user\desktop\books\gameengine2d\src\engine\global.c
 	"global.h"
 
-1771657254 source:c:\users\user\desktop\books\gameengine2d\src\engine\render\render.c
+1771818570 source:c:\users\user\desktop\books\gameengine2d\src\engine\render\render.c
 	<glad/glad.h>
 	"../global.h"
 	"render.h"
 	"render_internal.h"
 
-1771477198 source:c:\users\user\desktop\books\gameengine2d\src\engine\render\render_init.c
+1771728072 source:c:\users\user\desktop\books\gameengine2d\src\engine\render\render_init.c
 	<glad/glad.h>
 	<SDL2/SDL.h>
 	"src/engine/util.h"
@@ -546,7 +547,7 @@
 	"../types.h"
 	"render.h"
 
-1771474639 c:\users\user\desktop\books\gameengine2d\\src\engine\render\render_internal.h
+1771654235 c:\users\user\desktop\books\gameengine2d\\src\engine\render\render_internal.h
 	<SDL2/SDL.h>
 	"../types.h"
 	"render.h"
@@ -626,24 +627,40 @@
 1771611525 c:\users\user\desktop\books\gameengine2d\\src\engine\array_list.h
 	"types.h"
 
-1771654746 c:\users\user\desktop\books\gameengine2d\src\engine\physics.h
+1771900122 c:\users\user\desktop\books\gameengine2d\src\engine\physics.h
 	<stdbool.h>
 	<linmath.h>
 	"src/engine/types.h"
 
-1771656809 source:c:\users\user\desktop\books\gameengine2d\src\engine\physics\physics.c
+1771903815 source:c:\users\user\desktop\books\gameengine2d\src\engine\physics\physics.c
 	"src/engine/global.h"
 	"src/engine/array_list.h"
 	"src/engine/util.h"
 	"src/engine/physics.h"
 	"src/engine/physics/physics_internal.h"
 
-1771654746 c:\users\user\desktop\books\gameengine2d\\src\engine\physics.h
+1771900122 c:\users\user\desktop\books\gameengine2d\\src\engine\physics.h
 	<stdbool.h>
 	<linmath.h>
 	"src/engine/types.h"
 
-1771612829 c:\users\user\desktop\books\gameengine2d\\src\engine\physics\physics_internal.h
+1771733336 c:\users\user\desktop\books\gameengine2d\\src\engine\physics\physics_internal.h
 	"src/engine/array_list.h"
+	"src/engine/types.h"
+
+1771902540 source:c:\users\user\desktop\books\gameengine2d\src\engine\entity\entity.c
+	"src/engine/array_list.h"
+	"src/engine/entity.h"
+
+1771864920 c:\users\user\desktop\books\gameengine2d\\src\engine\entity.h
+	<stdbool.h>
+	<linmath.h>
+	"src/engine/physics.h"
+	"src/engine/types.h"
+
+1771864920 c:\users\user\desktop\books\gameengine2d\src\engine\entity.h
+	<stdbool.h>
+	<linmath.h>
+	"src/engine/physics.h"
 	"src/engine/types.h"
 
