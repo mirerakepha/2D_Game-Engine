@@ -52,14 +52,33 @@
 			<Add directory="../../../../../Libraries/SDL2/lib" />
 			<Add directory="../../../../../Libraries/freetype/lib" />
 		</Linker>
+		<Unit filename="assets/assets_breezys_mega_quest_2_stage_1.mp3" />
+		<Unit filename="assets/bullet_hit_wall.wav" />
+		<Unit filename="assets/enemy_death.wav" />
+		<Unit filename="assets/enemy_large.png" />
+		<Unit filename="assets/enemy_small.png" />
+		<Unit filename="assets/fire.png" />
+		<Unit filename="assets/hurt.wav" />
+		<Unit filename="assets/jump.wav" />
+		<Unit filename="assets/map.png" />
+		<Unit filename="assets/player.png" />
+		<Unit filename="assets/player_death.wav" />
+		<Unit filename="assets/props_16x16.png" />
+		<Unit filename="assets/shoot.wav" />
 		<Unit filename="bin/Debug/config.ini" />
 		<Unit filename="config.ini" />
 		<Unit filename="include/glad/glad.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="shaders/batch_quad.frag" />
+		<Unit filename="shaders/batch_quad.vert" />
 		<Unit filename="shaders/default.frag" />
 		<Unit filename="shaders/default.vert" />
+		<Unit filename="src/engine/animation.h" />
+		<Unit filename="src/engine/animation/animation.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/engine/array_list.h" />
 		<Unit filename="src/engine/array_list/array_list.c">
 			<Option compilerVar="CC" />
