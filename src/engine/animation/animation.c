@@ -83,19 +83,19 @@ Animation *animation_get(usize id)
 }
 
 
+// Fix — skip inactive animations
 void animation_update(f32 dt)
 {
     for (usize i = 0; i < animation_storage->len; ++i){
         Animation *animation = array_list_get(animation_storage, i);
+        if (!animation->is_active) continue;  // add this
+
         Animation_Definition *adef = animation->definition;
         animation->current_frame_time -= dt;
-
         if (animation->current_frame_time <= 0)
         {
             animation->current_frame_index += 1;
-
-            //loop or stay on last frame
-           if (animation->current_frame_index == adef->frame_count)
+            if (animation->current_frame_index == adef->frame_count)
             {
                 if (animation->does_loop){
                     animation->current_frame_index = 0;
@@ -103,7 +103,7 @@ void animation_update(f32 dt)
                     animation->current_frame_index -= 1;
                 }
             }
-            animation->current_frame_index = adef->frames[animation->current_frame_index].duration;
+            animation->current_frame_time = adef->frames[animation->current_frame_index].duration;
         }
     }
 }

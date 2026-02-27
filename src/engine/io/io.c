@@ -8,7 +8,7 @@
 
 #define IO_READ_CHUNK_SIZE 2097152
 #define IO_READ_ERROR_GENERAL "Error reading file: %s. errno: %d\n"
-#define IO_READ_ERROR_MEMORY "Not enough free mem to read this file"
+#define IO_READ_ERROR_MEMORY "Not enough free mem to read this file %s\n"
 
 File io_file_read(const char *path)
 {

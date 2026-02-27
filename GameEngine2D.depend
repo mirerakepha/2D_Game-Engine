@@ -471,7 +471,7 @@
 
 1675974285 c:\libraries\freetype\include\freetype\config\ftheader.h
 
-1772072374 source:c:\users\user\desktop\books\gameengine2d\main.c
+1772159780 source:c:\users\user\desktop\books\gameengine2d\main.c
 	<stdio.h>
 	<stdbool.h>
 	<stdlib.h>
@@ -487,6 +487,7 @@
 	"src/engine/util.h"
 	"src/engine/entity.h"
 	"src/engine/animation.h"
+	"src/engine/audio.h"
 
 1771438964 source:c:\users\user\desktop\books\gameengine2d\src\engine\global.c
 	"global.h"
@@ -560,7 +561,7 @@
 	"../types.h"
 	"render.h"
 
-1771580196 source:c:\users\user\desktop\books\gameengine2d\src\engine\io\io.c
+1772155930 source:c:\users\user\desktop\books\gameengine2d\src\engine\io\io.c
 	<stdio.h>
 	<stdlib.h>
 	<errno.h>
@@ -568,8 +569,9 @@
 	"../util.h"
 	"io.h"
 
-1771655580 c:\users\user\desktop\books\gameengine2d\src\engine\util.h
+1772155930 c:\users\user\desktop\books\gameengine2d\src\engine\util.h
 	<stdio.h>
+	<stdlib.h>
 
 1771474648 c:\users\user\desktop\books\gameengine2d\src\engine\io\io.h
 	<stdlib.h>
@@ -582,8 +584,9 @@
 	"../io/io.h"
 	"render_internal.h"
 
-1771655580 c:\users\user\desktop\books\gameengine2d\\src\engine\util.h
+1772155930 c:\users\user\desktop\books\gameengine2d\\src\engine\util.h
 	<stdio.h>
+	<stdlib.h>
 
 1771564476 c:\users\user\desktop\books\gameengine2d\\src\engine\config.h
 	"input.h"
@@ -635,19 +638,19 @@
 1771611525 c:\users\user\desktop\books\gameengine2d\\src\engine\array_list.h
 	"types.h"
 
-1771900122 c:\users\user\desktop\books\gameengine2d\src\engine\physics.h
+1772076917 c:\users\user\desktop\books\gameengine2d\src\engine\physics.h
 	<stdbool.h>
 	<linmath.h>
 	"src/engine/types.h"
 
-1771906524 source:c:\users\user\desktop\books\gameengine2d\src\engine\physics\physics.c
+1772155586 source:c:\users\user\desktop\books\gameengine2d\src\engine\physics\physics.c
 	"src/engine/global.h"
 	"src/engine/array_list.h"
 	"src/engine/util.h"
 	"src/engine/physics.h"
 	"src/engine/physics/physics_internal.h"
 
-1771900122 c:\users\user\desktop\books\gameengine2d\\src\engine\physics.h
+1772076917 c:\users\user\desktop\books\gameengine2d\\src\engine\physics.h
 	<stdbool.h>
 	<linmath.h>
 	"src/engine/types.h"
@@ -656,17 +659,18 @@
 	"src/engine/array_list.h"
 	"src/engine/types.h"
 
-1771989159 source:c:\users\user\desktop\books\gameengine2d\src\engine\entity\entity.c
+1772155586 source:c:\users\user\desktop\books\gameengine2d\src\engine\entity\entity.c
 	"src/engine/array_list.h"
 	"src/engine/entity.h"
+	"src/engine/util.h"
 
-1771989104 c:\users\user\desktop\books\gameengine2d\\src\engine\entity.h
+1772076962 c:\users\user\desktop\books\gameengine2d\\src\engine\entity.h
 	<stdbool.h>
 	<linmath.h>
 	"src/engine/physics.h"
 	"src/engine/types.h"
 
-1771989104 c:\users\user\desktop\books\gameengine2d\src\engine\entity.h
+1772076962 c:\users\user\desktop\books\gameengine2d\src\engine\entity.h
 	<stdbool.h>
 	<linmath.h>
 	"src/engine/physics.h"
@@ -689,15 +693,34 @@
 	<intrin.h>
 	<arm_neon.h>
 
-1772071759 source:c:\users\user\desktop\books\gameengine2d\src\engine\animation\animation.c
+1772161267 source:c:\users\user\desktop\books\gameengine2d\src\engine\animation\animation.c
 	<assert.h>
 	"src/engine/util.h"
 	"src/engine/array_list.h"
 	"src/engine/animation.h"
 
-1772072374 c:\users\user\desktop\books\gameengine2d\\src\engine\animation.h
+1772073707 c:\users\user\desktop\books\gameengine2d\\src\engine\animation.h
 	"src/engine/render/render.h"
 
 1772073707 c:\users\user\desktop\books\gameengine2d\src\engine\animation.h
 	"src/engine/render/render.h"
+
+1772158384 c:\users\user\desktop\books\gameengine2d\src\engine\audio.h
+	<SDL2/SDL.h>
+	<SDL2/SDL_mixer.h>
+
+1376156394 c:\libraries\sdl2\include\sdl2\sdl_mixer.h
+	"SDL_stdinc.h"
+	"SDL_rwops.h"
+	"SDL_audio.h"
+	"SDL_endian.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1772160207 source:c:\users\user\desktop\books\gameengine2d\src\engine\audio\audio.c
+	<SDL2/SDL.h>
+	<SDL2/SDL_mixer.h>
+	"src/engine/types.h"
+	"src/engine/util.h"
 
